@@ -10,25 +10,17 @@
 <body>
     <div class="container px-md-5">
         <div class="text-center my-3">
-            <h1 class="mb-0">AutoLKH</h1>
+            <h1 class="mb-0">Auto Sholat</h1>
             <a href="#tutorial">Click for Tutorial</a>
         </div>
         <div class="row mt-3 w-100">
             <div class="col-md-6 d-flex flex-column">
                 <h2>Data</h2>
                 <div class="form-group mb-0">
-                    <label class="form-label mt-1 mr-2" for="rayon"><h4>Rayon :</h4></label>
-                    <select class="form-select form-control" name="rayon" id="rayon">
-                    </select>
-                </div>
-                <div class="form-group mb-0">
-                    <label for="time_start" class="form-label mt-3 mb-1"><h4>Dari :</h4></label>
+                    <label for="time_start" class="form-label mt-3 mb-1"><h4>Tanggal</h4></label>
                     <div class="row d-flex align-items-center">
                         <div class="col-7">
-                            <input type="date" class="form-control" id="time-start" name="time_start" min='2021-08-23' max='6969-06-09'/>
-                        </div>
-                        <div class="col-5 align-items-center">
-                            <h5 class="m-0">- sampai hari ini</h5>
+                            <input type="date" class="form-control" id="time" name="time" min='2021-08-23' max='6969-06-09'/>
                         </div>
                     </div>
                 </div>
@@ -39,15 +31,9 @@
                 <fieldset class="form-group mb-2">
                     <legend class="mt-4">Additional Info</legend>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="religion" name="religion" disabled>
-                        <label class="form-check-label" for="religion">
-                            Islam (opsional) - skip for now
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="k-10" name="k_10">
-                        <label class="form-check-label" for="k-10">
-                            Kelas 10 (opsional)
+                        <input class="form-check-input" type="checkbox" id="halangan" name="halangan">
+                        <label class="form-check-label" for="halangan">
+                            Halangan
                         </label>
                     </div>
                 </fieldset>

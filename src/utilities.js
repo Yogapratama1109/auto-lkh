@@ -31,16 +31,12 @@ function fillQuestion(day) {
 
         entries += `&entry.${idsQuestion[1]}=${noAbsen.val()}`;
 
-        activities.forEach(function (val) {
-            entries += `&entry.${idsQuestion[2]}=${val}`;
-        })
-
-        if (day.getDay() == 2 && isTen.is(':checked')) {
-            entries += `&entry.${idsQuestion[2]}=P`;
-        }
-
-        if (day.getDay() == 5 && isIslam.is(':checked')) {
-            entries += `&entry.${idsQuestion[2]}=N`;
+        if (isH.is(':checked')) {
+            entries += `&entry.${idsQuestion[2]}=H`;
+        }else{
+            activities.forEach(function (val) {
+                entries += `&entry.${idsQuestion[2]}=${val}`;
+            })
         }
 
         return entries;
@@ -68,12 +64,12 @@ const submitForm = async (formId, day, entries) => {
             let dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 
             $('#terminal-wannabe-textarea').append(
-                `[${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}] SUCCESS Input LKH Hari ${dayNames[day.getDay()]}, ${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()}&#13;&#10;`
+                `[${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}] SUCCESS Input sholat hari ${dayNames[day.getDay()]}, ${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()}&#13;&#10;`
             );
         },
         error: function(xhr, status, error) {
             $('#terminal-wannabe-textarea').append(
-                `[${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}] ERROR Terjadi Kesalahan Ketika Input LKH Hari ${dayNames[day.getDay()]}, ${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()}&#13;&#10;`
+                `[${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}] ERROR Terjadi Kesalahan Ketika Input sholat hari ${dayNames[day.getDay()]}, ${day.getDate()}-${day.getMonth()+1}-${day.getFullYear()}&#13;&#10;`
             );
             $('#terminal-wannabe-textarea').append(
                 `Error: ${error} &#13;&#10;`
